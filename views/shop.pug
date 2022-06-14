@@ -1,0 +1,22 @@
+extends layouts/main-layout.pug
+
+block styles
+  link(rel="stylesheet", href="/css/index.css")
+block content
+    main
+      if prods.length > 0
+        div.grid
+          each product in prods
+            active.card.product-item
+              header.card-header
+                h1.product-title #{product.title}
+              div.card-image
+                img(src="https://img0.baidu.com/it/u=2380504503,4294542317&fm=253&fmt=auto&app=138&f=JPEG?w=350&h=449", alt="")
+              div.card-content
+                h2.product-price ￥59.9
+                p.product-description 一件网上款式非常流行，穿起来也很舒服的衣服
+              div.card-actions
+                button.btn 添加到购物车
+      else
+        h1 没有任何产品
+      

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{pageTitle}}</title>
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <header class="shop-header">
+    <nav class="shop-nav">
+      <ul class="shop-list">
+        <li class="shop-list-item"><a href="/">商店</a></li>
+        <li class="shop-list-item"><a class="active" href="/admin/add-product">添加产品</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    {{#if hasProducts}}
+      <div class="grid">
+        {{#each prods}}
+        <article class="card product-item">
+          <header class="card-header">
+            <h1 class="product-title">{{this.title}}</h1>
+          </header>
+          <div class="card-image">
+            <img src="https://img0.baidu.com/it/u=2380504503,4294542317&fm=253&fmt=auto&app=138&f=JPEG?w=350&h=449" alt="">
+          </div>
+          <div class="card-content">
+            <h2 class="prodcut-price">￥59.9</h2>
+            <p class="product-description">
+              一件网上款式非常流行，穿起来也很舒服的衣服
+            </p>
+          </div>
+          <div class="card-actions">
+            <button class="btn">添加到购物车</button>
+          </div>
+        </article>
+        {{/each}}
+    </div>
+    {{else}}
+    <div>没有更多产品了</div>
+    {{/if}}
+  </main>
+</body>
+</html>
